@@ -8,15 +8,15 @@
 
   "icons": {
     "128": "icon.png",
-	"256": "icon@2x.png"
+    "256": "icon@2x.png"
   },
-  
+
   "permissions": [
     "webRequest",
     "webRequestBlocking",
     "*://*.wikipedia.org/*"
   ],
-  
+
   "background": {
     "scripts": ["wikiwand.js"]
   }

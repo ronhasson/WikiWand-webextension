@@ -1,10 +1,9 @@
 var pattern = "*://*.wikipedia.org/*";
 
-
 function redirect(requestDetails) {
-	console.log("Redirecting: " + requestDetails.url);
+	console.info("Redirecting: " + requestDetails.url);
 	var x = convertURL(requestDetails.url);
-	console.log(x);
+
 	if (!x.redirect)
 		return {};
 	return {
@@ -12,14 +11,13 @@ function redirect(requestDetails) {
 	};
 }
 
-
 function convertURL(url) {
 	var result = {
 		url: url,
 		redirect: true
 	};
 
-	var el = document.createElement('a');
+	var el = document.createElement('a'); //temp element
 	el.href = url;
 
 	var host = el.host;
@@ -30,9 +28,10 @@ function convertURL(url) {
 	var article = pathname.split('/')[2];
 
 	result.url = "https://wikiwand.com/" + lang + "/" + article;
+
 	if (param.includes('oldformat=true') ||
 		article == "Main_Page" && lang == "en" || //main page on wikiwand.com in english(only) is bugged
-		pathname == "/") {
+		pathname == "/") { //the main page of wikipedia in english that redirects to /Main_Page
 
 		result.redirect = false;
 		result.url = url;
