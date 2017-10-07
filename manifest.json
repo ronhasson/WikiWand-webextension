@@ -1,0 +1,25 @@
+{
+
+  "manifest_version": 2,
+  "name": "WikiWand webextension",
+  "version": "0.2",
+  "author": "Ron Hasson",
+  "description": "A ported version of wikiwand to webextension - experimental",
+
+  "icons": {
+    "128": "icon.png",
+	"256": "icon@2x.png"
+  },
+  
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "*://*.wikipedia.org/*"
+  ],
+  
+  "background": {
+    "scripts": ["wikiwand.js"]
+  }
+
+
+}
