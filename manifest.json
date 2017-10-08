@@ -7,8 +7,7 @@
   "description": "A ported version of wikiwand to webextension - experimental",
 
   "icons": {
-    "128": "icon.png",
-    "256": "icon@2x.png"
+    "256": "icons/icon.png"
   },
 
   "permissions": [
@@ -19,6 +18,14 @@
 
   "background": {
     "scripts": ["wikiwand.js"]
+  },
+
+  "browser_action": {
+    "browser_style": false,
+    "default_icon": {
+      "256": "icons/icon.png"
+    },
+    "default_title": "Enable/Disable WikiWand"
   }
 
 

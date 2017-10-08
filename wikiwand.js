@@ -1,11 +1,16 @@
 var pattern = "*://*.wikipedia.org/*";
+var isEnabled;
 
 function redirect(requestDetails) {
-	console.info("Redirecting: " + requestDetails.url);
+
 	var x = convertURL(requestDetails.url);
 
 	if (!x.redirect)
 		return {};
+
+	console.info("Redirecting from: " + requestDetails.url);
+	console.info("Redirecting to: " + x.url);
+
 	return {
 		redirectUrl: x.url
 	};
@@ -27,7 +32,9 @@ function convertURL(url) {
 	var lang = host.substring(0, host.indexOf('.'));
 	var article = pathname.split('/')[2];
 
-	result.url = "https://wikiwand.com/" + lang + "/" + article;
+	//console.log("param: " + param + " \n" + "	article: " + article)
+
+	result.url = "https://wikiwand.com/" + lang + "/" + article + param;
 
 	if (param.includes('oldformat=true') ||
 		article == "Main_Page" && lang == "en" || //main page on wikiwand.com in english(only) is bugged
@@ -35,6 +42,9 @@ function convertURL(url) {
 
 		result.redirect = false;
 		result.url = url;
+	}
+	if (!isEnabled) {
+		result.redirect = false;
 	}
 	return result;
 }
@@ -45,3 +55,22 @@ browser.webRequest.onBeforeRequest.addListener(
 		types: ["main_frame"]
 	}, ["blocking"]
 );
+
+browser.runtime.onStartup.addListener(function () {
+	isEnabled = true;
+});
+
+browser.browserAction.onClicked.addListener(() => {
+
+	isEnabled = !isEnabled;
+
+	if (isEnabled) {
+		browser.browserAction.setIcon({
+			path: "icons/icon.png"
+		});
+	} else {
+		browser.browserAction.setIcon({
+			path: "icons/icon-disabled.png"
+		});
+	}
+});
