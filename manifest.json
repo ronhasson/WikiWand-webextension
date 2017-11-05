@@ -25,8 +25,15 @@
     "default_icon": {
       "256": "icons/icon.png"
     },
-    "default_title": "Enable/Disable WikiWand"
-  }
+    "default_title": "Enable / Disable WikiWand"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.wikiwand.com/*"],
+      "js": ["contentScript.js"]
+    }
+  ]
 
 
 }
