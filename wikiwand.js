@@ -66,11 +66,11 @@ browser.browserAction.onClicked.addListener(() => {
 
 	if (isEnabled) {
 		browser.browserAction.setIcon({
-			path: "icons/icon.png"
+			path: "icons/logo plain.svg"
 		});
 	} else {
 		browser.browserAction.setIcon({
-			path: "icons/icon-disabled.png"
+			path: "icons/logo disabled plain.svg"
 		});
 	}
 });
