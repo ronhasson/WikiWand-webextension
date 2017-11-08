@@ -7,12 +7,12 @@
   "description": "A ported version of wikiwand to webextension - experimental",
 
   "icons": {
-    "48": "icons/logo plain.svg",
-    "96": "icons/logo plain.svg",
-    "144": "icons/logo plain.svg",
-    "192": "icons/logo plain.svg",
-    "240": "icons/logo plain.svg",
-    "288": "icons/logo plain.svg"
+    "48": "icons/logo_plain.svg",
+    "96": "icons/logo_plain.svg",
+    "144": "icons/logo_plain.svg",
+    "192": "icons/logo_plain.svg",
+    "240": "icons/logo_plain.svg",
+    "288": "icons/logo_plain.svg"
   },
 
   "permissions": [
@@ -28,12 +28,12 @@
   "browser_action": {
     "browser_style": false,
     "default_icon": {
-      "48": "icons/logo plain.svg",
-      "96": "icons/logo plain.svg",
-      "144": "icons/logo plain.svg",
-      "192": "icons/logo plain.svg",
-      "240": "icons/logo plain.svg",
-      "288": "icons/logo plain.svg"
+      "48": "icons/logo_plain.svg",
+      "96": "icons/logo_plain.svg",
+      "144": "icons/logo_plain.svg",
+      "192": "icons/logo_plain.svg",
+      "240": "icons/logo_plain.svg",
+      "288": "icons/logo_plain.svg"
     },
     "default_title": "Enable / Disable WikiWand"
   },
