@@ -37,6 +37,9 @@ function convertURL(url) {
 	result.url = "https://wikiwand.com/" + lang + "/" + article + param;
 
 	if (param.includes('oldformat=true') ||
+		param.includes('action=') ||
+		param.includes('printable=yes') ||
+		param.includes('writer=rl') ||
 		article == "Main_Page" && lang == "en" || //main page on wikiwand.com in english(only) is bugged
 		pathname == "/") { //the main page of wikipedia in english that redirects to /Main_Page
 
