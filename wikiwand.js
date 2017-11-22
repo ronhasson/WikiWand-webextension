@@ -31,15 +31,13 @@ function convertURL(url) {
 
 	var lang = host.substring(0, host.indexOf('.'));
 	var article = pathname.split('/')[2];
+	console.log(pathname.split('/')[1]);
 
 	//console.log("param: " + param + " \n" + "	article: " + article)
 
 	result.url = "https://wikiwand.com/" + lang + "/" + article + param;
 
-	if (param.includes('oldformat=true') ||
-		param.includes('action=') ||
-		param.includes('printable=yes') ||
-		param.includes('writer=rl') ||
+	if (pathname.split('/')[1] == "w" || //wikipedia tools
 		article == "Main_Page" && lang == "en" || //main page on wikiwand.com in english(only) is bugged
 		pathname == "/") { //the main page of wikipedia in english that redirects to /Main_Page
 
