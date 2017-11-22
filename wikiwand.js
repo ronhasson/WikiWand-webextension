@@ -28,14 +28,14 @@ function convertURL(url) {
 	var host = el.host;
 	var pathname = el.pathname;
 	var param = el.search;
+	var hash = el.hash;
 
 	var lang = host.substring(0, host.indexOf('.'));
 	var article = pathname.split('/')[2];
-	console.log(pathname.split('/')[1]);
 
 	//console.log("param: " + param + " \n" + "	article: " + article)
 
-	result.url = "https://wikiwand.com/" + lang + "/" + article + param;
+	result.url = "https://wikiwand.com/" + lang + "/" + article + param + hash;
 
 	if (pathname.split('/')[1] == "w" || //wikipedia tools
 		article == "Main_Page" && lang == "en" || //main page on wikiwand.com in english(only) is bugged
