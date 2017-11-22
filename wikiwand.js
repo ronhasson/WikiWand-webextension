@@ -71,9 +71,15 @@ browser.browserAction.onClicked.addListener(() => {
 		browser.browserAction.setIcon({
 			path: "icons/logo_plain.svg"
 		});
+		browser.browserAction.setTitle({
+			title: "Wikiwand is enabled"
+		});
 	} else {
 		browser.browserAction.setIcon({
 			path: "icons/logo_disabled_plain.svg"
+		});
+		browser.browserAction.setTitle({
+			title: "Wikiwand is disabled"
 		});
 	}
 });
