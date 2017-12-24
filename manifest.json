@@ -2,9 +2,9 @@
 
   "manifest_version": 2,
   "name": "WikiWand webextension",
-  "version": "0.5",
+  "version": "0.6",
   "author": "Ron Hasson",
-  "description": "A ported version of wikiwand to webextension - experimental",
+  "description": "A ported version of wikiwand to webextension",
 
   "icons": {
     "48": "icons/logo_plain.svg",
