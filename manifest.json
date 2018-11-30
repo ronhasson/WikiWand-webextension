@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "WikiWand webextension",
-  "version": "0.6",
+  "version": "0.7",
   "author": "Ron Hasson",
   "description": "A ported version of wikiwand to webextension",
 
