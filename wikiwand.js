@@ -31,11 +31,11 @@ function convertURL(url) {
 	var hash = el.hash;
 
 	var lang = host.substring(0, host.indexOf('.'));
-	var article = pathname.split('/')[2];
+	var article = pathname.substring(pathname.indexOf('/', 1));
 
 	//console.log("param: " + param + " \n" + "	article: " + article)
 
-	result.url = "https://wikiwand.com/" + lang + "/" + article + param + hash;
+	result.url = "https://www.wikiwand.com/" + lang + article + param + hash;
 
 	if (param.includes('oldformat=true') ||
 		pathname.split('/')[1] == "w" || //wikipedia tools
